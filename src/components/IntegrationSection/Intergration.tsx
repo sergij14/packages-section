@@ -81,46 +81,44 @@ export const Option = styled.li`
       left: 25%;
       right: -60px;
       top: 50%;
-      border: 2px solid ${({ theme }) => theme.colors.purpleLight};
+      border: 2px solid ${({ theme }) => theme.colors.violetDark};
       border-radius: 16px;
-      border-right-width: 0;
+      border-left-width: 0;
       border-bottom-width: 0;
-      border-bottom-left-radius: 0;
-      transform: matrix(-1, 0, 0, 1, 0, 0);
+      border-bottom-right-radius: 0;
     }
     &:before {
       content: "";
       position: absolute;
       z-index: -1;
-      height: 100%;
+      height: calc(50% - 4px);
       width: 100%;
       left: 125%;
-      top: calc(100% - 4px);
-      border: 2px solid ${({ theme }) => theme.colors.purpleLight};
+      top: 150%;
+      border: 2px solid ${({ theme }) => theme.colors.violetDark};
       border-radius: 16px;
       border-right-width: 0;
-      border-bottom-width: 0;
-      border-bottom-left-radius: 0;
-      transform: matrix(1, 0, 0, -1, 0, 0);
+      border-top-width: 0;
+      border-top-left-radius: 0;
     }
   }
   &:nth-child(2) {
     &:after {
       content: "";
       position: absolute;
-      z-index: -1;
+      z-index: -6;
       height: 2px;
       width: 100%;
-      right: -50%;
+      right: calc(-25% - 11px);
       top: 50%;
       border-top: 2px solid ${({ theme }) => theme.colors.purpleLight};
     }
-  }
+  } 
   &:nth-child(3) {
     &:after {
       content: "";
       position: absolute;
-      z-index: -1;
+      z-index: -4;
       height: 100%;
       width: 100%;
       left: 125%;
@@ -128,15 +126,14 @@ export const Option = styled.li`
       bottom: calc(50% + 2rem);
       border: 2px solid ${({ theme }) => theme.colors.purpleLight};
       border-radius: 16px;
-      border-left-width: 0;
+      border-right-width: 0;
       border-bottom-width: 0;
-      border-bottom-right-radius: 0;
-      transform: matrix(-1, 0, 0, 1, 0, 0);
+      border-bottom-left-radius: 0;
     }
     &:before {
       content: "";
       position: absolute;
-      z-index: -1;
+      z-index: -4;
       height: 100%;
       width: 100%;
       left: 25%;
@@ -144,9 +141,8 @@ export const Option = styled.li`
       border: 2px solid ${({ theme }) => theme.colors.purpleLight};
       border-radius: 16px;
       border-left-width: 0;
-      border-bottom-width: 0;
-      border-bottom-right-radius: 0;
-      transform: matrix(1, 0, 0, -1, 0, 0);
+      border-top-width: 0;
+      border-top-right-radius: 0;
     }
   }
 `;
