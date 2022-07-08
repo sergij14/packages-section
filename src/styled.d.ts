@@ -4,11 +4,14 @@ import "styled-components";
 
 declare module "styled-components" {
   export interface DefaultTheme {
-    breakPoints: {
-      sm: string;
-      md: string;
-      lg: string;
-      xl: string;
+    colors: {
+      violetDark: string;
+      violetLight: string;
+      violetSoft: string;
+      gray: string;
+      grayLight: string;
+      purpleLight: string;
+      purpleLine: string;
     };
   }
 }

@@ -1,11 +1,12 @@
 
+import Intergration from "../IntegrationSection/Intergration";
 import { AppContainer } from "./App.styles";
 
 const App = () => {
 
   return (
     <AppContainer>
-      PP
+      <Intergration />
     </AppContainer>
   );
 };
