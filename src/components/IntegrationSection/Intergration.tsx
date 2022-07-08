@@ -41,7 +41,38 @@ const Intergration = () => {
         <h4>text</h4>
         <p>pararprag</p>
       </Middle>
-      <div>right</div>
+      <Options>
+        <OptionRight>
+          <OptionMeta>
+            <h5>Sapling</h5>
+            <p>hr management</p>
+          </OptionMeta>
+          <CheckBoxWrapper>
+            <CheckBox id="checkbox" type="checkbox" />
+            <CheckBoxLabel htmlFor="checkbox" />
+          </CheckBoxWrapper>
+        </OptionRight>
+        <OptionRight>
+          <OptionMeta>
+            <h5>asfas sasfasfasf</h5>
+            <p>hr mandf ssasfasfas</p>
+          </OptionMeta>
+          <CheckBoxWrapper>
+            <CheckBox id="checkbox2" type="checkbox" />
+            <CheckBoxLabel htmlFor="checkbox2" />
+          </CheckBoxWrapper>
+        </OptionRight>
+        <OptionRight>
+          <OptionMeta>
+            <h5>Saplidfhdfhng</h5>
+            <p>hr managdfhdfhement</p>
+          </OptionMeta>
+          <CheckBoxWrapper>
+            <CheckBox id="checkbox3" type="checkbox" />
+            <CheckBoxLabel htmlFor="checkbox3" />
+          </CheckBoxWrapper>
+        </OptionRight>
+      </Options>
     </Container>
   );
 };
@@ -66,6 +97,7 @@ export const Option = styled.li`
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
+  height: 8rem;
   border: ${({ theme }) => theme.colors.grayLight} 1px solid;
   padding: 1.8rem;
   background-color: white;
@@ -76,11 +108,11 @@ export const Option = styled.li`
       content: "";
       position: absolute;
       z-index: -1;
-      height: 100%;
-      width: 100%;
-      left: 25%;
+      height: 37px;
+      width: 200px;
+      left: 118px;
       right: -60px;
-      top: 50%;
+      top: 39px;
       border: 2px solid ${({ theme }) => theme.colors.violetDark};
       border-radius: 16px;
       border-left-width: 0;
@@ -91,10 +123,10 @@ export const Option = styled.li`
       content: "";
       position: absolute;
       z-index: -1;
-      height: calc(50% - 4px);
-      width: 100%;
-      left: 125%;
-      top: 150%;
+      height: 60px;
+      width: 200px;
+      left: 318px;
+      top: 78Px;
       border: 2px solid ${({ theme }) => theme.colors.violetDark};
       border-radius: 16px;
       border-right-width: 0;
@@ -108,9 +140,9 @@ export const Option = styled.li`
       position: absolute;
       z-index: -6;
       height: 2px;
-      width: 100%;
-      right: calc(-25% - 11px);
-      top: 50%;
+      width: 400px;
+      right: -100%;
+      top: 38px;
       border-top: 2px solid ${({ theme }) => theme.colors.purpleLight};
     }
   } 
@@ -119,11 +151,11 @@ export const Option = styled.li`
       content: "";
       position: absolute;
       z-index: -4;
-      height: 100%;
-      width: 100%;
-      left: 125%;
+      height: 60px;
+      width: 200px;
+      left: 318px;
       right: -60px;
-      bottom: calc(50% + 2rem);
+      bottom: 78px;
       border: 2px solid ${({ theme }) => theme.colors.purpleLight};
       border-radius: 16px;
       border-right-width: 0;
@@ -134,10 +166,10 @@ export const Option = styled.li`
       content: "";
       position: absolute;
       z-index: -4;
-      height: 100%;
-      width: 100%;
-      left: 25%;
-      bottom: 50%;
+      height: 40px;
+      width: 200px;
+      left: 118px;
+      bottom: 36px;
       border: 2px solid ${({ theme }) => theme.colors.purpleLight};
       border-radius: 16px;
       border-left-width: 0;
@@ -146,6 +178,20 @@ export const Option = styled.li`
     }
   }
 `;
+
+export const OptionRight = styled.li`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  height: 8rem;
+  border: ${({ theme }) => theme.colors.grayLight} 1px solid;
+  padding: 1.8rem;
+  background-color: white;
+  border-radius: 1.2rem;
+  position: relative;
+`
+
 export const OptionMeta = styled.div``;
 
 const CheckBoxWrapper = styled.div`
