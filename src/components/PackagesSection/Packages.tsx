@@ -4,7 +4,13 @@ import usePackagesSection from "./hooks/usePackagesSection";
 import Lines from "./UI/Lines";
 
 const Packages = () => {
-  const { data, activePackageData } = usePackagesSection();
+  const {
+    data,
+    activePackageData,
+    setActivePackage,
+    activeFeature,
+    setActiveFeature,
+  } = usePackagesSection();
 
   return (
     <Container>
@@ -16,7 +22,9 @@ const Packages = () => {
       </SubHeading>
       <NavButtons>
         {data?.map(({ label, id }) => (
-          <button key={label + id}>{label}</button>
+          <button key={label + id} onClick={() => setActivePackage(+id)}>
+            {label}
+          </button>
         ))}
       </NavButtons>
       <FlexContainer>
@@ -28,30 +36,40 @@ const Packages = () => {
                 <p>{subLabel}</p>
               </OptionMeta>
               <CheckBoxWrapper>
-                <CheckBox id={'checkbox-' + id} type="checkbox" />
-                <CheckBoxLabel htmlFor={'checkbox-' + id} />
+                <CheckBox
+                  id={"checkbox-" + id}
+                  type="checkbox"
+                  onChange={() => setActiveFeature(id)}
+                  checked={id === activeFeature}
+                />
+                <CheckBoxLabel htmlFor={"checkbox-" + id} />
               </CheckBoxWrapper>
             </Option>
           ))}
         </Options>
-        <Lines position="left" />
+        <Lines {...{position: 'left', activeFeature, activePackage: activePackageData?.id}}  />
         <Middle>
-          <div>{activePackageData?.person.imgUrl}</div>
+          <img src={activePackageData?.person.imgUrl} alt={activePackageData?.person.name} />
           <h4>{activePackageData?.person.position}</h4>
           <h4>{activePackageData?.person.name}</h4>
           <p>{activePackageData?.person.quotte}</p>
         </Middle>
-        <Lines position="right" />
+        <Lines {...{position: 'right', activeFeature, activePackage: activePackageData?.id}} />
         <Options>
-          {activePackageData?.features.right.map(({ label, subLabel, id}) => (
+          {activePackageData?.features.right.map(({ label, subLabel, id }) => (
             <OptionRight key={id}>
               <OptionMeta>
                 <h5>{label}</h5>
                 <p>{subLabel}</p>
               </OptionMeta>
               <CheckBoxWrapper>
-                <CheckBox id={'checkbox-' + id} type="checkbox" />
-                <CheckBoxLabel htmlFor={'checkbox-' + id} />
+                <CheckBox
+                  id={"checkbox-" + id}
+                  type="checkbox"
+                  onChange={() => setActiveFeature(id)}
+                  checked={id === activeFeature}
+                />
+                <CheckBoxLabel htmlFor={"checkbox-" + id} />
               </CheckBoxWrapper>
             </OptionRight>
           ))}
@@ -152,7 +170,6 @@ const CheckBoxLabel = styled.label`
     margin: 3px;
     background: #ffffff;
     box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.2);
-    transition: 0.2s;
   }
 `;
 const CheckBox = styled.input`
@@ -170,14 +187,13 @@ const CheckBox = styled.input`
       width: 18px;
       height: 18px;
       margin-left: 21px;
-      transition: 0.2s;
     }
   }
 `;
 
 export const Middle = styled.div`
   background: ${({ theme }) => theme.colors.purpleLight};
-  border: ${({ theme }) => theme.colors.violetSoft} 2px solid;
+  border: ${({ theme }) => theme.colors.purpleLight} 2px solid;
   border-radius: 2.4rem;
   padding: 3rem;
   flex-grow: 1;

@@ -1,39 +1,39 @@
 {
   "packages": [
     {
-      "id": "1",
+      "id": "0",
       "label": "Small Business",
       "features": {
         "left": [
           {
-              "id": "1.1.1",
+              "id": "0.1.1",
             "label": "Sapling",
             "subLabel": "HR management"
           },
           {
-              "id": "1.1.2",
+              "id": "0.1.2",
               "label": "Workday",
             "subLabel": "HR management"
           },
           {
-              "id": "1.1.3",
+              "id": "0.1.3",
               "label": "Xero",
             "subLabel": "Employers Base"
           }
         ],
         "right": [
           {
-              "id": "1.2.1",
+              "id": "0.2.1",
               "label": "Rippling",
             "subLabel": "Salary management"
           },
           {
-              "id": "1.2.2",
+              "id": "0.2.2",
               "label": "Expensify",
             "subLabel": "HR management"
           },
           {
-              "id": "1.2.3",
+              "id": "0.2.3",
               "label": "Zenefits",
             "subLabel": "HR management"
           }
@@ -47,39 +47,39 @@
       }
     },
     {
-      "id": "2",
+      "id": "1",
       "label": "Small Business",
       "features": {
         "left": [
           {
-            "id": "2.1.1",
+            "id": "1.1.1",
             "label": "Sapling 2",
             "subLabel": "HR management"
           },
           {
-            "id": "2.1.2",
+            "id": "1.1.2",
             "label": "Workday 2",
             "subLabel": "HR management"
           },
           {
-            "id": "2.1.3",
+            "id": "1.1.3",
             "label": "Xero 2",
             "subLabel": "Employers Base"
           }
         ],
         "right": [
           {
-            "id": "2.2.1",
+            "id": "1.2.1",
             "label": "Rippling 2",
             "subLabel": "Salary management"
           },
           {
-            "id": "2.2.2",
+            "id": "1.2.2",
             "label": "Expensify 2",
             "subLabel": "HR management"
           },
           {
-            "id": "2.2.3",
+            "id": "1.2.3",
             "label": "Zenefits 2",
             "subLabel": "HR management"
           }
@@ -87,45 +87,45 @@
       },
       "person": {
         "position": "director",
-        "imgUrl": "./images/img3.jpg",
+        "imgUrl": "./images/img2.jpg",
         "name": "Lauren Robson",
         "quotte": "I want to lower PTO liability and keep my employess happy. I want to lower PTO liability."
       }
     },
     {
-      "id": "3",
+      "id": "2",
       "label": "Enterprise",
       "features": {
         "left": [
           {
-            "id": "3.1.1",
+            "id": "2.1.1",
             "label": "Sapling 3",
             "subLabel": "HR management"
           },
           {
-            "id": "3.1.2",
+            "id": "2.1.2",
             "label": "Workday 3",
             "subLabel": "HR management"
           },
           {
-            "id": "3.1.3",
+            "id": "2.1.3",
             "label": "Xero 3",
             "subLabel": "Employers Base"
           }
         ],
         "right": [
           {
-            "id": "3.2.1",
+            "id": "2.2.1",
             "label": "Rippling 3",
             "subLabel": "Salary management"
           },
           {
-            "id": "3.2.2",
+            "id": "2.2.2",
             "label": "Expensify 3",
             "subLabel": "HR management"
           },
           {
-            "id": "3.2.3",
+            "id": "2.2.3",
             "label": "Zenefits 3",
             "subLabel": "HR management"
           }
