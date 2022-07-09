@@ -1,6 +1,6 @@
 import React from "react";
 import usePackagesSection from "./hooks/usePackagesSection";
-import { CheckBox, CheckBoxLabel, CheckBoxWrapper, Container, Heading, Image, Middle, Name, NavButtons, Option, OptionLabel, OptionMeta, Options, OptionSubLabel, PackagesContainer, Quotte, Role, SubHeading } from "./Packages.styles";
+import { CheckBox, CheckBoxLabel, CheckBoxWrapper, Container, Heading, Image, Middle, Name, NavButton, NavButtons, Option, OptionLabel, OptionMeta, Options, OptionSubLabel, PackagesContainer, Quotte, Role, SubHeading } from "./Packages.styles";
 import Lines from "./UI/Lines";
 
 const Packages = () => {
@@ -12,6 +12,7 @@ const Packages = () => {
     setActiveFeature,
   } = usePackagesSection();
 
+
   return (
     <Container>
       <Heading>Easy Turn-Key Integration</Heading>
@@ -22,9 +23,9 @@ const Packages = () => {
       </SubHeading>
       <NavButtons>
         {data?.map(({ label, id }) => (
-          <button key={label + id} onClick={() => setActivePackage(+id)}>
+          <NavButton key={label + id} isActive={activePackageData?.id === id} onClick={() => setActivePackage(+id)}>
             {label}
-          </button>
+          </NavButton>
         ))}
       </NavButtons>
       <PackagesContainer>

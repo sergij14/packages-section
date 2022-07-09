@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Container = styled.div`
   display: flex;
@@ -14,11 +14,35 @@ export const NavButtons = styled.div`
   margin-top: 4rem;
   display: flex;
   justify-content: center;
-  gap: 1rem;
-  & > button {
-    all: unset;
-    border: 1px red solid;
-  }
+  gap: 1.5rem;
+`;
+
+export const NavButton = styled.button<{ isActive: boolean }>`
+  all: unset;
+  cursor: pointer;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  color: ${({ theme }) => theme.colors.violetLight};
+  font-size: 1.4rem;
+  font-weight: 700;
+  ${({ theme, isActive }) =>
+    isActive
+      ? css`
+          background-color: ${theme.colors.violetSoft};
+          border:2px ${theme.colors.violetSoft} solid;
+          color: white;
+        `
+      : css`
+          background-color: white;
+          border:2px ${theme.colors.grayLight} solid;
+        `};
+
+        &:focus {
+            outline:4px ${({ theme }) => theme.colors.grayLight} solid;
+        }
 `;
 
 export const Heading = styled.h2`
@@ -44,19 +68,22 @@ export const Options = styled.ul`
   flex-basis: 35%;
 `;
 
-export const Option = styled.li<{isActive: boolean}>`
+export const Option = styled.li<{ isActive: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
   height: 8rem;
-  border: ${({ theme, isActive }) => isActive ? theme.colors.violetSoft + ' 2px' : theme.colors.grayLight + ' 1px'} solid;
+  border: ${({ theme, isActive }) =>
+      isActive
+        ? theme.colors.violetSoft + " 2px"
+        : theme.colors.grayLight + " 1px"}
+    solid;
   padding: 1.8rem;
   background-color: white;
   border-radius: 1.2rem;
   position: relative;
   cursor: pointer;
-
 `;
 
 export const OptionMeta = styled.div`
@@ -82,7 +109,6 @@ export const OptionSubLabel = styled.h6`
   font-weight: 400;
   font-size: 1.2rem;
 `;
-
 
 export const CheckBoxLabel = styled.label`
   position: absolute;
