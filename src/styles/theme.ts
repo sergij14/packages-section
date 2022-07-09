@@ -7,7 +7,7 @@ export const theme: DefaultTheme = {
     violetSoft: "#9D71FD",
     gray: "#A39CB5",
     grayLight: "#E8E6EC",
-    purpleLight: "#D7CFFD",
+    purpleLight: "#F2EFFE",
     purpleLine: "#F2EFFE"
   },
 };

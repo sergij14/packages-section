@@ -1,89 +1,136 @@
 import React from "react";
 import styled from "styled-components";
+import Lines from "./UI/Lines";
 
 const Intergration = () => {
   return (
     <Container>
-      <Options>
-        <Option>
-          <OptionMeta>
-            <h5>Sapling</h5>
-            <p>hr management</p>
-          </OptionMeta>
-          <CheckBoxWrapper>
-            <CheckBox id="checkbox" type="checkbox" />
-            <CheckBoxLabel htmlFor="checkbox" />
-          </CheckBoxWrapper>
-        </Option>
-        <Option>
-          <OptionMeta>
-            <h5>asfas sasfasfasf</h5>
-            <p>hr mandf ssasfasfas</p>
-          </OptionMeta>
-          <CheckBoxWrapper>
-            <CheckBox id="checkbox2" type="checkbox" />
-            <CheckBoxLabel htmlFor="checkbox2" />
-          </CheckBoxWrapper>
-        </Option>
-        <Option>
-          <OptionMeta>
-            <h5>Saplidfhdfhng</h5>
-            <p>hr managdfhdfhement</p>
-          </OptionMeta>
-          <CheckBoxWrapper>
-            <CheckBox id="checkbox3" type="checkbox" />
-            <CheckBoxLabel htmlFor="checkbox3" />
-          </CheckBoxWrapper>
-        </Option>
-      </Options>
-      <Middle>
-        <div>img</div>
-        <h4>text</h4>
-        <p>pararprag</p>
-      </Middle>
-      <Options>
-        <OptionRight>
-          <OptionMeta>
-            <h5>Sapling</h5>
-            <p>hr management</p>
-          </OptionMeta>
-          <CheckBoxWrapper>
-            <CheckBox id="checkbox" type="checkbox" />
-            <CheckBoxLabel htmlFor="checkbox" />
-          </CheckBoxWrapper>
-        </OptionRight>
-        <OptionRight>
-          <OptionMeta>
-            <h5>asfas sasfasfasf</h5>
-            <p>hr mandf ssasfasfas</p>
-          </OptionMeta>
-          <CheckBoxWrapper>
-            <CheckBox id="checkbox2" type="checkbox" />
-            <CheckBoxLabel htmlFor="checkbox2" />
-          </CheckBoxWrapper>
-        </OptionRight>
-        <OptionRight>
-          <OptionMeta>
-            <h5>Saplidfhdfhng</h5>
-            <p>hr managdfhdfhement</p>
-          </OptionMeta>
-          <CheckBoxWrapper>
-            <CheckBox id="checkbox3" type="checkbox" />
-            <CheckBoxLabel htmlFor="checkbox3" />
-          </CheckBoxWrapper>
-        </OptionRight>
-      </Options>
+      <Heading>Easy Turn-Key Integration</Heading>
+      <SubHeading>
+        Increase job satisfaction, improve engagement, decrease burnout and
+        lower payroll liability by reimagining what employees can do with their
+        PTO.
+      </SubHeading>
+      <NavButtons>
+        <button>small business</button>
+        <button>enterprise</button>
+      </NavButtons>
+      <FlexContainer>
+        <Options>
+          <Option>
+            <OptionMeta>
+              <h5>Sapling</h5>
+              <p>hr management</p>
+            </OptionMeta>
+            <CheckBoxWrapper>
+              <CheckBox id="checkbox" type="checkbox" />
+              <CheckBoxLabel htmlFor="checkbox" />
+            </CheckBoxWrapper>
+          </Option>
+          <Option>
+            <OptionMeta>
+              <h5>asfas sasfasfasf</h5>
+              <p>hr mandf ssasfasfas</p>
+            </OptionMeta>
+            <CheckBoxWrapper>
+              <CheckBox id="checkbox2" type="checkbox" />
+              <CheckBoxLabel htmlFor="checkbox2" />
+            </CheckBoxWrapper>
+          </Option>
+          <Option>
+            <OptionMeta>
+              <h5>Saplidfhdfhng</h5>
+              <p>hr managdfhdfhement</p>
+            </OptionMeta>
+            <CheckBoxWrapper>
+              <CheckBox id="checkbox3" type="checkbox" />
+              <CheckBoxLabel htmlFor="checkbox3" />
+            </CheckBoxWrapper>
+          </Option>
+        </Options>
+
+        <Lines position="left" />
+
+        <Middle>
+          <div>img</div>
+          <h4>text</h4>
+          <p>pararprag</p>
+        </Middle>
+
+        <Lines position="right" />
+
+        <Options>
+          <OptionRight>
+            <OptionMeta>
+              <h5>Sapling</h5>
+              <p>hr management</p>
+            </OptionMeta>
+            <CheckBoxWrapper>
+              <CheckBox id="checkbox" type="checkbox" />
+              <CheckBoxLabel htmlFor="checkbox" />
+            </CheckBoxWrapper>
+          </OptionRight>
+          <OptionRight>
+            <OptionMeta>
+              <h5>asfas sasfasfasf</h5>
+              <p>hr mandf ssasfasfas</p>
+            </OptionMeta>
+            <CheckBoxWrapper>
+              <CheckBox id="checkbox2" type="checkbox" />
+              <CheckBoxLabel htmlFor="checkbox2" />
+            </CheckBoxWrapper>
+          </OptionRight>
+          <OptionRight>
+            <OptionMeta>
+              <h5>Saplidfhdfhng</h5>
+              <p>hr managdfhdfhement</p>
+            </OptionMeta>
+            <CheckBoxWrapper>
+              <CheckBox id="checkbox3" type="checkbox" />
+              <CheckBoxLabel htmlFor="checkbox3" />
+            </CheckBoxWrapper>
+          </OptionRight>
+        </Options>
+      </FlexContainer>
     </Container>
   );
 };
 
+
 export const Container = styled.div`
   display: flex;
-  gap: 13rem;
-  & > div {
-    flex: 0 0 calc(100% / 3);
-    max-width: calc(100% / 3);
+  flex-direction: column;
+`;
+
+export const FlexContainer = styled.div`
+  display: flex;
+  margin-top: 6rem;
+`;
+
+export const NavButtons = styled.div`
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  & > button {
+    all: unset;
+    border: 1px red solid;
   }
+`
+
+export const Heading = styled.h2`
+  margin: 4rem 0;
+  font-size: 6.4rem;
+  font-weight: 700;
+  color: ${({ theme }) => theme.colors.violetDark};
+  text-align: center;
+`;
+
+export const SubHeading = styled.h5`
+  font-size: 1.8rem;
+  color: ${({ theme }) => theme.colors.violetLight};
+  text-align: center;
+  font-weight: 400;
 `;
 
 export const Options = styled.ul`
@@ -103,80 +150,6 @@ export const Option = styled.li`
   background-color: white;
   border-radius: 1.2rem;
   position: relative;
-  &:nth-child(1) {
-    &:after {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      height: 37px;
-      width: 200px;
-      left: 118px;
-      right: -60px;
-      top: 39px;
-      border: 2px solid ${({ theme }) => theme.colors.violetDark};
-      border-radius: 16px;
-      border-left-width: 0;
-      border-bottom-width: 0;
-      border-bottom-right-radius: 0;
-    }
-    &:before {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      height: 60px;
-      width: 200px;
-      left: 318px;
-      top: 78Px;
-      border: 2px solid ${({ theme }) => theme.colors.violetDark};
-      border-radius: 16px;
-      border-right-width: 0;
-      border-top-width: 0;
-      border-top-left-radius: 0;
-    }
-  }
-  &:nth-child(2) {
-    &:after {
-      content: "";
-      position: absolute;
-      z-index: -6;
-      height: 2px;
-      width: 400px;
-      right: -100%;
-      top: 38px;
-      border-top: 2px solid ${({ theme }) => theme.colors.purpleLight};
-    }
-  } 
-  &:nth-child(3) {
-    &:after {
-      content: "";
-      position: absolute;
-      z-index: -4;
-      height: 60px;
-      width: 200px;
-      left: 318px;
-      right: -60px;
-      bottom: 78px;
-      border: 2px solid ${({ theme }) => theme.colors.purpleLight};
-      border-radius: 16px;
-      border-right-width: 0;
-      border-bottom-width: 0;
-      border-bottom-left-radius: 0;
-    }
-    &:before {
-      content: "";
-      position: absolute;
-      z-index: -4;
-      height: 40px;
-      width: 200px;
-      left: 118px;
-      bottom: 36px;
-      border: 2px solid ${({ theme }) => theme.colors.purpleLight};
-      border-radius: 16px;
-      border-left-width: 0;
-      border-top-width: 0;
-      border-top-right-radius: 0;
-    }
-  }
 `;
 
 export const OptionRight = styled.li`
@@ -190,7 +163,7 @@ export const OptionRight = styled.li`
   background-color: white;
   border-radius: 1.2rem;
   position: relative;
-`
+`;
 
 export const OptionMeta = styled.div``;
 
@@ -242,7 +215,8 @@ export const Middle = styled.div`
   background: ${({ theme }) => theme.colors.purpleLight};
   border: ${({ theme }) => theme.colors.violetSoft} 2px solid;
   border-radius: 2.4rem;
-  padding: 4rem;
+  padding: 3rem;
+  flex-grow: 1;
 `;
 
 export default Intergration;
