@@ -75,8 +75,8 @@ const Packages = () => {
           {activePackageData?.features.right.map(({ label, subLabel, id }) => (
             <Option key={id} isActive={id === activeFeature}>
               <OptionMeta onClick={() => setActiveFeature(id)}>
-                <h5>{label}</h5>
-                <p>{subLabel}</p>
+                <OptionLabel>{label}</OptionLabel>
+                <OptionSubLabel>{subLabel}</OptionSubLabel>
               </OptionMeta>
               <CheckBoxWrapper>
                 <CheckBox
