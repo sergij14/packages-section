@@ -31,8 +31,8 @@ const Packages = () => {
       <PackagesContainer>
         <Options>
           {activePackageData?.features.left.map(({ label, subLabel, id }) => (
-            <Option key={id} onClick={() => setActiveFeature(id)} isActive={id === activeFeature}>
-              <OptionMeta>
+            <Option key={id} isActive={id === activeFeature}>
+              <OptionMeta onClick={() => setActiveFeature(id)}>
                 <OptionLabel>{label}</OptionLabel>
                 <OptionSubLabel>{subLabel}</OptionSubLabel>
               </OptionMeta>
@@ -73,8 +73,8 @@ const Packages = () => {
         />
         <Options>
           {activePackageData?.features.right.map(({ label, subLabel, id }) => (
-            <Option key={id} onClick={() => setActiveFeature(id)} isActive={id === activeFeature}>
-              <OptionMeta>
+            <Option key={id} isActive={id === activeFeature}>
+              <OptionMeta onClick={() => setActiveFeature(id)}>
                 <h5>{label}</h5>
                 <p>{subLabel}</p>
               </OptionMeta>

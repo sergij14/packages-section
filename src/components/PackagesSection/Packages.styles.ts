@@ -83,13 +83,17 @@ export const Option = styled.li<{ isActive: boolean }>`
   background-color: white;
   border-radius: 1.2rem;
   position: relative;
-  cursor: pointer;
 `;
 
 export const OptionMeta = styled.div`
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+  opacity: 0.7;
   gap: 0.5rem;
+  &:hover {
+    opacity: 1;
+  }
 `;
 
 export const CheckBoxWrapper = styled.div`
