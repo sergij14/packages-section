@@ -13,9 +13,7 @@ const usePackagesSection = () => {
         Accept: "application/json",
       },
     })
-      .then((response) => {
-        return response.json();
-      })
+      .then((response) => response.json())
       .then((data: PackagesData) => {
         setData(data.packages);
       })

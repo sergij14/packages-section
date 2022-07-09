@@ -74,7 +74,7 @@ export const Option = styled.li<{ isActive: boolean }>`
   align-items: center;
   gap: 2rem;
   height: 8rem;
-  border: ${({ theme, isActive }) =>
+  outline: ${({ theme, isActive }) =>
       isActive
         ? theme.colors.violetSoft + " 2px"
         : theme.colors.grayLight + " 1px"}
