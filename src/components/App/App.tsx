@@ -1,12 +1,12 @@
 
-import Intergration from "../IntegrationSection/Intergration";
+import Packages from "../PackagesSection/Packages";
 import { AppContainer } from "./App.styles";
 
 const App = () => {
 
   return (
     <AppContainer>
-      <Intergration />
+      <Packages />
     </AppContainer>
   );
 };

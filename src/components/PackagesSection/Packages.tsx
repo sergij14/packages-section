@@ -1,8 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import usePackagesSection from "./hooks/usePackagesSection";
 import Lines from "./UI/Lines";
 
-const Intergration = () => {
+const Packages = () => {
+  const { data, activePackageData } = usePackagesSection();
+
   return (
     <Container>
       <Heading>Easy Turn-Key Integration</Heading>
@@ -12,90 +15,51 @@ const Intergration = () => {
         PTO.
       </SubHeading>
       <NavButtons>
-        <button>small business</button>
-        <button>enterprise</button>
+        {data?.map(({ label, id }) => (
+          <button key={label + id}>{label}</button>
+        ))}
       </NavButtons>
       <FlexContainer>
         <Options>
-          <Option>
-            <OptionMeta>
-              <h5>Sapling</h5>
-              <p>hr management</p>
-            </OptionMeta>
-            <CheckBoxWrapper>
-              <CheckBox id="checkbox" type="checkbox" />
-              <CheckBoxLabel htmlFor="checkbox" />
-            </CheckBoxWrapper>
-          </Option>
-          <Option>
-            <OptionMeta>
-              <h5>asfas sasfasfasf</h5>
-              <p>hr mandf ssasfasfas</p>
-            </OptionMeta>
-            <CheckBoxWrapper>
-              <CheckBox id="checkbox2" type="checkbox" />
-              <CheckBoxLabel htmlFor="checkbox2" />
-            </CheckBoxWrapper>
-          </Option>
-          <Option>
-            <OptionMeta>
-              <h5>Saplidfhdfhng</h5>
-              <p>hr managdfhdfhement</p>
-            </OptionMeta>
-            <CheckBoxWrapper>
-              <CheckBox id="checkbox3" type="checkbox" />
-              <CheckBoxLabel htmlFor="checkbox3" />
-            </CheckBoxWrapper>
-          </Option>
+          {activePackageData?.features.left.map(({ label, subLabel, id }) => (
+            <Option key={id}>
+              <OptionMeta>
+                <h5>{label}</h5>
+                <p>{subLabel}</p>
+              </OptionMeta>
+              <CheckBoxWrapper>
+                <CheckBox id={'checkbox-' + id} type="checkbox" />
+                <CheckBoxLabel htmlFor={'checkbox-' + id} />
+              </CheckBoxWrapper>
+            </Option>
+          ))}
         </Options>
-
         <Lines position="left" />
-
         <Middle>
-          <div>img</div>
-          <h4>text</h4>
-          <p>pararprag</p>
+          <div>{activePackageData?.person.imgUrl}</div>
+          <h4>{activePackageData?.person.position}</h4>
+          <h4>{activePackageData?.person.name}</h4>
+          <p>{activePackageData?.person.quotte}</p>
         </Middle>
-
         <Lines position="right" />
-
         <Options>
-          <OptionRight>
-            <OptionMeta>
-              <h5>Sapling</h5>
-              <p>hr management</p>
-            </OptionMeta>
-            <CheckBoxWrapper>
-              <CheckBox id="checkbox" type="checkbox" />
-              <CheckBoxLabel htmlFor="checkbox" />
-            </CheckBoxWrapper>
-          </OptionRight>
-          <OptionRight>
-            <OptionMeta>
-              <h5>asfas sasfasfasf</h5>
-              <p>hr mandf ssasfasfas</p>
-            </OptionMeta>
-            <CheckBoxWrapper>
-              <CheckBox id="checkbox2" type="checkbox" />
-              <CheckBoxLabel htmlFor="checkbox2" />
-            </CheckBoxWrapper>
-          </OptionRight>
-          <OptionRight>
-            <OptionMeta>
-              <h5>Saplidfhdfhng</h5>
-              <p>hr managdfhdfhement</p>
-            </OptionMeta>
-            <CheckBoxWrapper>
-              <CheckBox id="checkbox3" type="checkbox" />
-              <CheckBoxLabel htmlFor="checkbox3" />
-            </CheckBoxWrapper>
-          </OptionRight>
+          {activePackageData?.features.right.map(({ label, subLabel, id}) => (
+            <OptionRight key={id}>
+              <OptionMeta>
+                <h5>{label}</h5>
+                <p>{subLabel}</p>
+              </OptionMeta>
+              <CheckBoxWrapper>
+                <CheckBox id={'checkbox-' + id} type="checkbox" />
+                <CheckBoxLabel htmlFor={'checkbox-' + id} />
+              </CheckBoxWrapper>
+            </OptionRight>
+          ))}
         </Options>
       </FlexContainer>
     </Container>
   );
 };
-
 
 export const Container = styled.div`
   display: flex;
@@ -116,7 +80,7 @@ export const NavButtons = styled.div`
     all: unset;
     border: 1px red solid;
   }
-`
+`;
 
 export const Heading = styled.h2`
   margin: 4rem 0;
@@ -219,4 +183,4 @@ export const Middle = styled.div`
   flex-grow: 1;
 `;
 
-export default Intergration;
+export default Packages;
