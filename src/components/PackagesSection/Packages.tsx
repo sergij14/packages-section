@@ -1,6 +1,6 @@
 import React from "react";
 import usePackagesSection from "./hooks/usePackagesSection";
-import { CheckBox, CheckBoxLabel, CheckBoxWrapper, Container, Heading, Image, Middle, Name, NavButtons, Option, OptionMeta, OptionRight, Options, PackagesContainer, Quotte, Role, SubHeading } from "./Packages.styles";
+import { CheckBox, CheckBoxLabel, CheckBoxWrapper, Container, Heading, Image, Middle, Name, NavButtons, Option, OptionLabel, OptionMeta, Options, OptionSubLabel, PackagesContainer, Quotte, Role, SubHeading } from "./Packages.styles";
 import Lines from "./UI/Lines";
 
 const Packages = () => {
@@ -30,10 +30,10 @@ const Packages = () => {
       <PackagesContainer>
         <Options>
           {activePackageData?.features.left.map(({ label, subLabel, id }) => (
-            <Option key={id}>
+            <Option key={id} onClick={() => setActiveFeature(id)} isActive={id === activeFeature}>
               <OptionMeta>
-                <h5>{label}</h5>
-                <p>{subLabel}</p>
+                <OptionLabel>{label}</OptionLabel>
+                <OptionSubLabel>{subLabel}</OptionSubLabel>
               </OptionMeta>
               <CheckBoxWrapper>
                 <CheckBox
@@ -72,7 +72,7 @@ const Packages = () => {
         />
         <Options>
           {activePackageData?.features.right.map(({ label, subLabel, id }) => (
-            <OptionRight key={id}>
+            <Option key={id} onClick={() => setActiveFeature(id)} isActive={id === activeFeature}>
               <OptionMeta>
                 <h5>{label}</h5>
                 <p>{subLabel}</p>
@@ -86,7 +86,7 @@ const Packages = () => {
                 />
                 <CheckBoxLabel htmlFor={"checkbox-" + id} />
               </CheckBoxWrapper>
-            </OptionRight>
+            </Option>
           ))}
         </Options>
       </PackagesContainer>
