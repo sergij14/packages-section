@@ -1,7 +1,27 @@
 import React from "react";
 import usePackagesSection from "./hooks/usePackagesSection";
-import { CheckBox, CheckBoxLabel, CheckBoxWrapper, Container, Heading, Image, Middle, Name, NavButton, NavButtons, Option, OptionLabel, OptionMeta, Options, OptionSubLabel, PackagesContainer, Quotte, Role, SubHeading } from "./Packages.styles";
-import Lines from "./UI/Lines";
+import {
+  CheckBox,
+  CheckBoxLabel,
+  CheckBoxWrapper,
+  Container,
+  Heading,
+  Image,
+  Middle,
+  Name,
+  NavButton,
+  NavButtons,
+  Option,
+  OptionLabel,
+  OptionMeta,
+  Options,
+  OptionSubLabel,
+  PackagesContainer,
+  Quotte,
+  Role,
+  SubHeading,
+} from "./Packages.styles";
+import SVGLines from "./UI/SVGLines";
 
 const Packages = () => {
   const {
@@ -11,7 +31,6 @@ const Packages = () => {
     activeFeature,
     setActiveFeature,
   } = usePackagesSection();
-
 
   return (
     <Container>
@@ -23,7 +42,11 @@ const Packages = () => {
       </SubHeading>
       <NavButtons>
         {data?.map(({ label, id }) => (
-          <NavButton key={label + id} isActive={activePackageData?.id === id} onClick={() => setActivePackage(+id)}>
+          <NavButton
+            key={label + id}
+            isActive={activePackageData?.id === id}
+            onClick={() => setActivePackage(+id)}
+          >
             {label}
           </NavButton>
         ))}
@@ -48,10 +71,10 @@ const Packages = () => {
             </Option>
           ))}
         </Options>
-        <Lines
+        <SVGLines
           {...{
             position: "left",
-            activeFeature,
+            activeFeature: activeFeature.split("."),
             activePackage: activePackageData?.id,
           }}
         />
@@ -64,10 +87,10 @@ const Packages = () => {
           <Role>{activePackageData?.person.position}</Role>
           <Quotte>{activePackageData?.person.quotte}</Quotte>
         </Middle>
-        <Lines
+        <SVGLines
           {...{
             position: "right",
-            activeFeature,
+            activeFeature: activeFeature.split("."),
             activePackage: activePackageData?.id,
           }}
         />
