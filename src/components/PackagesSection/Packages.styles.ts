@@ -8,6 +8,11 @@ export const Container = styled.div`
 export const PackagesContainer = styled.div`
   display: flex;
   margin-top: 8rem;
+  @media (max-width: ${({ theme }) => theme.breakPoints.md}) {
+    gap: 2rem;
+    flex-direction: column;
+    margin-top: 4rem;
+  }
 `;
 
 export const NavButtons = styled.div`
@@ -15,6 +20,10 @@ export const NavButtons = styled.div`
   display: flex;
   justify-content: center;
   gap: 1.5rem;
+  @media (max-width: ${({ theme }) => theme.breakPoints.md}) {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
 `;
 
 export const NavButton = styled.button<{ isActive: boolean }>`
@@ -32,17 +41,20 @@ export const NavButton = styled.button<{ isActive: boolean }>`
     isActive
       ? css`
           background-color: ${theme.colors.violetSoft};
-          border:2px ${theme.colors.violetSoft} solid;
+          border: 2px ${theme.colors.violetSoft} solid;
           color: white;
         `
       : css`
           background-color: white;
-          border:2px ${theme.colors.grayLight} solid;
+          border: 2px ${theme.colors.grayLight} solid;
         `};
 
-        &:focus {
-            outline:4px ${({ theme }) => theme.colors.grayLight} solid;
-        }
+  &:focus {
+    outline: 4px ${({ theme }) => theme.colors.grayLight} solid;
+  }
+  @media (max-width: ${({ theme }) => theme.breakPoints.md}) {
+    font-size: 1.2rem;
+  }
 `;
 
 export const Heading = styled.h2`
@@ -51,6 +63,9 @@ export const Heading = styled.h2`
   font-weight: 700;
   color: ${({ theme }) => theme.colors.violetDark};
   text-align: center;
+  @media (max-width: ${({ theme }) => theme.breakPoints.md}) {
+    font-size: 4.4rem;
+  }
 `;
 
 export const SubHeading = styled.h5`
@@ -164,6 +179,9 @@ export const Middle = styled.div<{ isActive: boolean }>`
   gap: 1rem;
   align-items: center;
   position: relative;
+  @media (max-width: ${({ theme }) => theme.breakPoints.md}) {
+    margin: 4rem 0 2rem 0;
+  }
 `;
 
 export const Image = styled.img`

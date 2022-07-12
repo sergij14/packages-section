@@ -95,6 +95,9 @@ const LinesContainer = styled.div<{ position: Props["position"] }>`
       `;
     }
   }}
+  @media (max-width: ${({ theme }) => theme.breakPoints.md}) {
+    display: none;
+  }
 `;
 
 const Path = styled.path<{ isActive: boolean }>`

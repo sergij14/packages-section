@@ -13,5 +13,12 @@ declare module "styled-components" {
       purpleLight: string;
       purpleLine: string;
     };
+    breakPoints: {
+      sm: string;
+      md: string;
+      lg: string;
+      xl: string;
+      xxl: string;
+    };
   }
 }

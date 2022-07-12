@@ -10,4 +10,11 @@ export const theme: DefaultTheme = {
     purpleLight: "#F2EFFE",
     purpleLine: "#F2EFFE"
   },
+  breakPoints: {
+    sm: '425px',
+    md: '768px',
+    lg: '964px',
+    xl: '1240px',
+    xxl: '1420px'
+  }
 };
