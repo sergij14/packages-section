@@ -1,2 +1,2 @@
-# packages-section
-test-task
+# Packages Section
+Packages/Plans section created with React & TypeScript.
